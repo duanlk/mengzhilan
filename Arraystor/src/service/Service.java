@@ -11,6 +11,16 @@ public class Service {
 	
 	
 	public static void ArrayC() {
+		String dou = ",";
+		System.out.print("数组a:[");
+		for (int i = 0; i < Utils.A.length; i++) {
+			if(i >= Utils.A.length - 1) {
+				dou = "";
+			}
+			System.out.print(Utils.A[i] +dou);
+		}
+		System.out.println("]");
+		
 		InsertBArray jk = new InsertBArray();
 		int[] op = jk.B();
 		System.out.println("请输入插入到数组a的位置：");
@@ -28,13 +38,11 @@ public class Service {
 		}
 		for (int i = 0; i < index; i++) {
 			Utils.C[i] = a[i];
-			System.out.println(Utils.C[i]);
 		}
 		
 
 		for (int o = 0; o < op.length; o++) {
 			Utils.C[o +index] = op[o];
-			System.out.println(Utils.C[o +index]);
 		}
 		
 		int b = index + Utils.NUMBER;  //
@@ -48,12 +56,18 @@ public class Service {
 				}
 			}
 		}
+		
 		for (int i = 0; i < c; i++) {
 			Utils.C[i + b] = a[i+index];
-			System.out.println(Utils.C[i + b]);
 		}
-	}
-	public static void main(String[] args) {
-		Service.ArrayC();
+		String dou1 = ",";
+		System.out.print("新数组c:[");
+		for (int u = 0; u < Utils.C.length; u++) {
+			if(u >= Utils.C.length - 1) {
+				dou1 = "";
+			}
+			System.out.print(Utils.C[u] +dou1);
+		}
+		System.out.println("]");
 	}
 }
