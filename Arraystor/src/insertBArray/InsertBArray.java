@@ -9,8 +9,8 @@ public class InsertBArray {
 
 	private static Scanner input = new Scanner(System.in);
 	
-	public void B() {
-		Utils b = new Utils();
+	public int[] B() {
+		
 		int[] B = new int[Utils.NUMBER];
 		for(int i = 0;i < B.length;i++) {
 			System.out.println("请输入长度为5的数组,"+(i+1)+"下标数组b内容：");
@@ -27,6 +27,6 @@ public class InsertBArray {
 	                }
 	            }
 	        }
-		b.setB(B);
+		return B;
 	}
 }
