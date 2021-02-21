@@ -23,8 +23,18 @@ public class Service {
 		
 		InsertBArray jk = new InsertBArray();
 		int[] op = jk.B();
-		System.out.println("请输入插入到数组a的位置：");
-		int index = input.nextInt();
+		int index;
+		boolean bool = false;
+		do {
+			System.out.println("请输入插入到数组a的位置(0-8)：");
+			index = input.nextInt();
+			if(index < 0 || index > 8) {
+				System.out.println("插入位置有误! ! !");
+				bool = true;
+			}else {
+				bool = false;
+			}
+		} while (bool);
 		int max = 0;
 		int[] a = Utils.A;
 		for (int i = 0; i < index-1; i++) {
@@ -70,4 +80,5 @@ public class Service {
 		}
 		System.out.println("]");
 	}
+	
 }
