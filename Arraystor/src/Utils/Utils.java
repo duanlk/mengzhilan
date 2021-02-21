@@ -7,7 +7,7 @@ public class Utils {
 	
 	
 	public int[] b;
-
+	
 
 	public int[] getB() {
 		return b;
