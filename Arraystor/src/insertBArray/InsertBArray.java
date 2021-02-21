@@ -2,7 +2,7 @@ package insertBArray;
 
 import Utils.Utils;
 
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class InsertBArray {
@@ -10,7 +10,7 @@ public class InsertBArray {
 	private static Scanner input = new Scanner(System.in);
 	
 	public void B() {
-		
+		Utils b = new Utils();
 		int[] B = new int[Utils.NUMBER];
 		for(int i = 0;i < B.length;i++) {
 			System.out.println("请输入长度为5的数组,"+(i+1)+"下标数组b内容：");
@@ -27,6 +27,6 @@ public class InsertBArray {
 	                }
 	            }
 	        }
-		 System.out.println(Arrays.toString(B));
+		b.setB(B);
 	}
 }
