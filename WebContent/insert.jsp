@@ -34,7 +34,9 @@
 	<%
 	String sql="insert into `order`(name,mation,times,address,amount,state) values(?,?,?,?,?,?)";
 	 int i=update(sql,"柳浩威","鱼香肉丝",10,"湖南软件",36.0,"已订购");
-	 out.print(i);
+	 if(i>0){
+		 out.print("");
+	 }
 	%>
 
 </body>

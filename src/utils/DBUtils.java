@@ -26,7 +26,7 @@ public class DBUtils {
 			Class.forName(properties.getProperty("driver"));
 
 		} catch (ClassNotFoundException | IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}
