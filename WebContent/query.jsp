@@ -41,18 +41,16 @@
 				String state=resultSet.getString(7);
 				%>
 				<tr>
-				<td>id</td>
-				<td>name</td>
-				<td>mation</td>
-				<td>time</td>
-				<td>address</td>
-				<td>amount</td>
-				<td>state</td>
-				<td><a href="<%=URI%>/delete.jsp?id=<%=id%>" target="_blank" >删除</a></td>
-				<td><a href="<%=URI%>/update.jsp?id=<%=id%>" >更新</a></td>
+				<td><%=id %></td>
+				<td><%=name %></td>
+				<td><%=mation %></td>
+				<td><%=time %></td>
+				<td><%=address %></td>
+				<td><%=amount %></td>
+				<td><%=state %></td>
+				<td><a href="delete.jsp?id=<%=id%>" target="_blank" >删除</a></td>
+				<td><a href="update.jsp?id=<%=id%>" >更新</a></td>
 				</tr>
-				
-				
 				
 				
 				<!-- out.print("<tr> <td>"+id+"</td> <td>"
