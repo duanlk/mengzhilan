@@ -4,46 +4,47 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>删除</title>
 </head>
 <body>
-		<%
-		String id=request.getParameter("id");
-			
-		%>
-		已删除id:
-		<%=id %>
-		<a href="query.jsp">返回表单页</a>
 		<%!
-	public int update(String sql, Object... agrs) {
-		Connection connection=DBUtils.getConnection();
-		PreparedStatement prepareStatement = null;
-		try {
+		
+		public int update(String sql,Object...agrs) {
+			Connection connection=DBUtils.getConnection();
+			PreparedStatement prepareStatement = null;
+			try {
 
-			prepareStatement = connection.prepareStatement(sql);
-			for (int i = 0; i < agrs.length; i++) {
-				prepareStatement.setObject(i + 1, agrs[i]);
+				prepareStatement = connection.prepareStatement(sql);
+				for (int i = 0; i < agrs.length; i++) {
+					prepareStatement.setObject(i + 1, agrs[i]);
+				}
+				int result = prepareStatement.executeUpdate();
+				
+				return  result;
+				
+				
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			} finally {
+				DBUtils.close(null, prepareStatement);
 			}
-			int result = prepareStatement.executeUpdate();
-			
-			return  result;
-			
-			
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		} finally {
-			DBUtils.close(null, prepareStatement);
+			return 0;
 		}
-		return 0;
-	}
-	%>
-	<%
-	String sql="delete from `order` where id= ?";
-	 int i=update(sql,id);
-	 if(i>0){
-		 out.print("");
-	 }
-	%>
+		
+		%>
+		
+		<% 
+			 String id=request.getParameter("id");
+		
+			String sql="delete from `order` where id=?";
+			int i=update(sql,Integer.parseInt(id));
+			if(i>0){
+				response.sendRedirect("query.jsp");
+			}
+		
+		%>
+		
+		
 </body>
 </html>

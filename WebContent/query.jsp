@@ -19,7 +19,7 @@
 		<th>价格</th>
 		<th>状态</th>
 		
-		<th colspan="2">操作</th>
+		<th colspan="3">操作</th>
 		</tr>
 		
 		
@@ -39,6 +39,7 @@
 				String address=resultSet.getString(5);
 				double amount=resultSet.getDouble(6);
 				String state=resultSet.getString(7);
+				
 				%>
 				<tr>
 				<td><%=id %></td>
@@ -47,10 +48,14 @@
 				<td><%=time %></td>
 				<td><%=address %></td>
 				<td><%=amount %></td>
-				<td><%=state %></td>
-				<td><a href="delete.jsp?id=<%=id%>" target="_blank" >删除</a></td>
-				<td><a href="update.jsp?id=<%=id%>" >更新</a></td>
+				<td><%=amount %></td>
+				<td><a href="delete.jsp?id=<%=id%>" >删除</a></td>
+				<td><a href="update.jsp?id=<%=id%>"  >更新</a></td>
+				
+				
 				</tr>
+				
+				
 				
 				
 				<!-- out.print("<tr> <td>"+id+"</td> <td>"
@@ -59,7 +64,7 @@
 				+amount+"</td> <td>"+state+"</td> <td><a href="+URL+">删除</a></td></tr>"); -->
 			<%}%>
 			
-			
+			<a href="insert.jsp" >新增</a>
 			
 			
 		
